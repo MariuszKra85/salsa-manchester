@@ -24,9 +24,10 @@ html{
   
   padding: 0;
   margin: 0;
-  font-size: 10px;
+  font-size: 58.62%;
   line-height: 2;
   background-color: --black;
+  font-display: optional;
 } 
 a{
   text-decoration: none;
@@ -48,7 +49,6 @@ button{
 const InnerStyle = styled.div`
   max-width: var(--maxWidth);
   margin: 0 auto;
-  padding: 2rem;
 `;
 
 export default function Page({ children }) {

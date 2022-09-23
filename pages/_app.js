@@ -8,6 +8,7 @@ import { ApolloProvider } from '@apollo/client';
 import withData from '../lib/withData';
 
 import Page from '../components/Page';
+import { UserStateProvider } from '../lib/useUser';
 
 Router.events.on('routeChangeStart', () => NProgress.start());
 Router.events.on('routeChangeComplete', () => NProgress.done());
@@ -16,9 +17,11 @@ Router.events.on('routeChangeError', () => NProgress.done());
 function MyApp({ Component, pageProps, apollo }) {
   return (
     <ApolloProvider client={apollo}>
-      <Page>
-        <Component {...pageProps} />
-      </Page>
+      <UserStateProvider>
+        <Page>
+          <Component {...pageProps} />
+        </Page>
+      </UserStateProvider>
     </ApolloProvider>
   );
 }

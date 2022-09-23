@@ -1,4 +1,4 @@
-import Document, { Html, Head } from 'next/document';
+import Document, { Html } from 'next/document';
 import { ServerStyleSheet } from 'styled-components';
 
 export default class MyDocument extends Document {
@@ -10,6 +10,7 @@ export default class MyDocument extends Document {
       ctx.renderPage = () =>
         originalRenderPage({
           enhanceApp: (App) => (props) =>
+            // eslint-disable-next-line react/jsx-props-no-spreading
             sheet.collectStyles(<App {...props} />),
         });
 
@@ -18,6 +19,7 @@ export default class MyDocument extends Document {
         ...initialProps,
         styles: (
           <Html lang="en">
+            <title>Salsa</title>
             {initialProps.styles}
             {sheet.getStyleElement()}
           </Html>
