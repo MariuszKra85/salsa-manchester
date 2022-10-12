@@ -5,6 +5,7 @@ import { useUser } from '../lib/useUser';
 
 const Wrapper = styled.div`
   display: flex;
+  margin-top: 200px;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -80,6 +81,7 @@ export default function LoginForm() {
 
   async function handleSubmit(e) {
     e.preventDefault();
+    message();
     const res = await singIn();
 
     return res;

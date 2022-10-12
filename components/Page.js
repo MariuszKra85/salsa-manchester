@@ -1,5 +1,6 @@
 import { PropTypes } from 'prop-types';
 import styled, { createGlobalStyle } from 'styled-components';
+import Heading from './Heading';
 
 const GlobalStyles = createGlobalStyle`
 @font-face{
@@ -28,6 +29,7 @@ html{
   line-height: 2;
   background-color: --black;
   font-display: optional;
+  color: var(--offWhite);
 } 
 a{
   text-decoration: none;
@@ -56,6 +58,7 @@ export default function Page({ children }) {
     <>
       <GlobalStyles />
       <InnerStyle>{children}</InnerStyle>
+      <Heading />
     </>
   );
 }
